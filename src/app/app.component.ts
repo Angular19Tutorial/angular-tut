@@ -8,5 +8,8 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'angular-tut';
+  title = 'angular-tutorial';
+  name = 'Surbhi'
+  x=5;
+  y=7;
 }

@@ -1,14 +1,24 @@
-<h1>Get and Set Input Field Value</h1>
-<h1>User Name :{{displayName}} </h1>
-<input type="text" value="{{name}}" (input)="getName($event)" name="input" placeholder="Enter User Name">
-<br>
-<br>
-<button (click)="showName()">Get Value </button>
-<button (click)="setName( )" >Set Name</button>
+<h1> For Loop in Angular 19</h1>
+@for(user of users;track user){
+    <h2>{{user}} </h2>
+}
+
 <hr>
-<h2>Email:{{email}} </h2>
-<input type="text" value="{{email}}" placeholder="Enter Email" #emailField>
-<br>
-<br>
-<button (click)="getEmail(emailField.value)" >Get Email</button>
-<button (click)="setEmail()" >Set Email</button>
+
+@for(student of students;track student.name; let id=$index){
+<h2>
+    <span>
+    {{id+1}}
+</span>
+<span>
+    {{student.name}}
+</span>
+<span>
+    {{student.age}}
+</span>
+<span>
+    {{student.email}}
+</span>
+ </h2>
+ <button (click)="getname(student.name)">Get Name</button>
+} 

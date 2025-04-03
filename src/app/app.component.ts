@@ -8,27 +8,16 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
- name=""
- displayName=""
- email=""
- getName(event:Event){
-  this.name=(event.target as HTMLInputElement).value
-  
- }
+  users = ["Anil","Sam","Bruce","Tony"]
+  name=''
+  students= [
+    {name:'Anil',age:20,email:'anil@gmail.com'},
+    {name:'Sam',age:22,email:'sam@gmail.com'},
+    {name:'Bruce',age:27,email:'bruce@gmail.com'},
+    {name:'Tony',age:21,email:'tony@gmail.com'},
+  ]
 
- showName(){
-  this.displayName=this.name;
- }
-
- setName(){
-  this.name ="sam"
- }
- getEmail(val:string){
-console.log(val);
-this.email=val;
- }
-
- setEmail(){
-  this.email ="bisarwal@gmail.com"
- }
+  getname(name:string){
+   console.log(name)
+  }
 }

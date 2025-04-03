@@ -8,31 +8,27 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
- count=0
- /*handleIncrement(){
-  this.count=this.count+1
+ name=""
+ displayName=""
+ email=""
+ getName(event:Event){
+  this.name=(event.target as HTMLInputElement).value
+  
  }
- handleDecrement(){
-  this.count=this.count-1
+
+ showName(){
+  this.displayName=this.name;
  }
- reset(){
-  this.count=0
+
+ setName(){
+  this.name ="sam"
  }
-*/
- handleCounter(val:string){
-if (val=='minus'){
-  if(this.count==0){
-    this.count=0
-  }
-  else{
-  this.count=this.count-1
-}
-}
-else if (val=='plus'){
-  this.count=this.count+1
-}
-else{
-  this.count=0
-}
+ getEmail(val:string){
+console.log(val);
+this.email=val;
+ }
+
+ setEmail(){
+  this.email ="bisarwal@gmail.com"
  }
 }

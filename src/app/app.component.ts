@@ -21,7 +21,12 @@ export class AppComponent {
 */
  handleCounter(val:string){
 if (val=='minus'){
+  if(this.count==0){
+    this.count=0
+  }
+  else{
   this.count=this.count-1
+}
 }
 else if (val=='plus'){
   this.count=this.count+1

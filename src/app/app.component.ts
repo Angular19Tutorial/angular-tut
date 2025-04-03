@@ -1,17 +1,33 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { LoginComponent } from './login/login.component';
-import { ProfileComponent } from './profile/profile.component';
 
 @Component({
   selector: 'app-root',
-  imports: [LoginComponent, ProfileComponent],
+  imports: [],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'angular-tutorial';
-  name = 'Surbhi';
-  x = 5;
-  y = 7;
+ count=0
+ /*handleIncrement(){
+  this.count=this.count+1
+ }
+ handleDecrement(){
+  this.count=this.count-1
+ }
+ reset(){
+  this.count=0
+ }
+*/
+ handleCounter(val:string){
+if (val=='minus'){
+  this.count=this.count-1
+}
+else if (val=='plus'){
+  this.count=this.count+1
+}
+else{
+  this.count=0
+}
+ }
 }

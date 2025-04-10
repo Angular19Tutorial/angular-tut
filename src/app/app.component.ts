@@ -1,23 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, effect, signal } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  users = ["Anil","Sam","Bruce","Tony"]
-  name=''
-  students= [
-    {name:'Anil',age:20,email:'anil@gmail.com'},
-    {name:'Sam',age:22,email:'sam@gmail.com'},
-    {name:'Bruce',age:27,email:'bruce@gmail.com'},
-    {name:'Tony',age:21,email:'tony@gmail.com'},
-  ]
+task='';
+taskList:{id:number,task:string} []=[];
 
-  getname(name:string){
-   console.log(name)
-  }
+
+addtask(){
+  this.taskList.push({id:this.taskList.length+1, task:this.task})
+  this.task=''
+console.log(this.taskList);
+}
+deleteTask(taskId:number){
+  this.taskList= this.taskList.filter((item)=>item.id!=taskId);
+}
 }
